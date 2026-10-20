@@ -6,7 +6,7 @@
 // de scroll. A foto só inclina e brilha: nunca é deformada.
 import {
   WebGLRenderer, PerspectiveCamera, Scene, Group, Mesh, PlaneGeometry, MeshBasicMaterial,
-  ShaderMaterial, Texture, Color, Vector2, SRGBColorSpace, LinearMipmapLinearFilter,
+  ShaderMaterial, Texture, Color, Vector2, Vector4, SRGBColorSpace, LinearMipmapLinearFilter,
 } from 'three';
 
 const FOV = 30;
@@ -33,7 +33,7 @@ const VERT_FUNDO = `
   }`;
 // Meio-tom de mangá a 45°: os pontos crescem perto da foto (halo) e perto do ponteiro.
 const FRAG_FUNDO = `
-  uniform vec3 uCor; uniform float uAlfa, uG, uR, uK; uniform vec2 uC, uM, uS;
+  uniform vec3 uCor; uniform float uAlfa, uG, uR, uK, uF; uniform vec2 uC, uM, uS; uniform vec4 uT;
   varying vec2 vP;
   void main() {
     vec2 q = mat2(0.7071, 0.7071, -0.7071, 0.7071) * vP / uG;
@@ -44,7 +44,10 @@ const FRAG_FUNDO = `
     m *= 0.88 + 0.12 * sin(dist * 5.0 + uK);
     float r = 0.3 * clamp(m, 0.0, 1.0);
     vec2 borda = 1.0 - smoothstep(0.7, 1.0, abs(vP) / uS);   // dissolve nas bordas da cena: sem corte seco
-    float a = (1.0 - smoothstep(r - fwidth(d), r, d)) * step(0.02, r) * uAlfa * borda.x * borda.y;
+    // uT = retângulo da palavra da cena (x0,y0,x1,y1): sem pontos sobre as letras, borda suave de uF
+    vec2 fora = max(uT.xy - vP, vP - uT.zw);
+    float texto = smoothstep(0.0, uF, max(fora.x, fora.y));
+    float a = (1.0 - smoothstep(r - fwidth(d), r, d)) * step(0.02, r) * uAlfa * borda.x * borda.y * texto;
     gl_FragColor = vec4(uCor, a);
     #include <colorspace_fragment>
   }`;
@@ -82,6 +85,7 @@ class Cena {
     this.fig = el.querySelector('[data-foto]');
     this.img = this.fig.querySelector('img');
     this.hero = el.dataset.cena === 'hero';
+    this.palavra = el.querySelector('.estilo__word');   // só Estilos: o screentone desvia das letras
     this.dir = i % 2 ? -1 : 1;           // linhas alternadas inclinam para lados opostos
     this.px = this.py = this.sc = this.exit = 0;
     this.visivel = false; this.sujo = true;
@@ -93,6 +97,11 @@ class Cena {
     if (!img.complete || !img.naturalWidth) {
       await new Promise((ok, erro) => { img.addEventListener('load', ok, { once: true }); img.addEventListener('error', erro, { once: true }); });
     }
+    // Pixels reais: img.naturalWidth de um <img> com srcset é a largura corrigida pela densidade
+    // (menor que o arquivo). Uma <img> sem srcset (mesma URL, já em cache) devolve o tamanho verdadeiro.
+    this.raw = new Image();
+    this.raw.src = img.currentSrc || img.src;
+    await this.raw.decode();
     this.montar();
     this.medir();
     this.passo(0, true);                 // 1º frame desenhado ANTES de assumir o lugar do DOM
@@ -131,8 +140,10 @@ class Cena {
     const borda = cor(lerVar('--cartao-borda')), sombra = cor(lerVar('--cartao-sombra'));
     // Não usar o <img> direto: img.width devolve a largura renderizada em CSS, o three aloca a textura
     // com ela e a imagem maior não cabe. Um canvas de tamanho natural tem as dimensões certas.
-    const pix = Object.assign(document.createElement('canvas'), { width: this.img.naturalWidth, height: this.img.naturalHeight });
-    pix.getContext('2d').drawImage(this.img, 0, 0);
+    const { naturalWidth: pw, naturalHeight: ph } = this.raw;
+    const pix = Object.assign(document.createElement('canvas'), { width: pw, height: ph });
+    pix.getContext('2d').drawImage(this.raw, 0, 0);
+    canvas.dataset.textura = `${pw}x${ph}`;   // resolução real da textura (os testes conferem)
     const tex = new Texture(pix);
     tex.colorSpace = SRGBColorSpace;
     tex.minFilter = LinearMipmapLinearFilter;
@@ -160,7 +171,7 @@ class Cena {
     this.fundos = [[220, 0.2, 10, 0], [80, 0.16, 22, 1]].map(([d, alfa, g, ordem]) => {
       const m = malha(new ShaderMaterial({
         ...opts, vertexShader: VERT_FUNDO, fragmentShader: FRAG_FUNDO,
-        uniforms: { uCor: { value: ponto }, uAlfa: { value: alfa }, uG: { value: 1 }, uR: { value: 1 }, uK: { value: 0 }, uC: { value: new Vector2() }, uM: { value: new Vector2(1e5, 1e5) }, uS: { value: new Vector2(1, 1) } },
+        uniforms: { uCor: { value: ponto }, uAlfa: { value: alfa }, uG: { value: 1 }, uR: { value: 1 }, uK: { value: 0 }, uF: { value: 1 }, uC: { value: new Vector2() }, uM: { value: new Vector2(1e5, 1e5) }, uS: { value: new Vector2(1, 1) }, uT: { value: new Vector4(1e5, 1e5, 1e5 + 1, 1e5 + 1) } },
       }), ordem);
       m.userData = { d, g };
       this.cena.add(m);
@@ -186,13 +197,22 @@ class Cena {
     this.moldura.scale.set(fw, fh, 1);
     this.foto.scale.set(fw - 2 * bw, fh - 2 * bw, 1);
     this.brilho.scale.copy(this.foto.scale);
+    // retângulo da palavra (com folga p/ o parallax de ±2vw e o respiro vertical), em coords do mundo
+    let t = null;
+    if (this.palavra) {
+      const er = el.getBoundingClientRect(), range = document.createRange();
+      range.selectNodeContents(this.palavra);
+      const b = range.getBoundingClientRect(), px = innerWidth * 0.03 + 16, py = b.height * 0.15;
+      t = [b.left - er.left - px - W / 2, -(b.bottom - er.top + py - H / 2), b.right - er.left + px - W / 2, -(b.top - er.top - py - H / 2)];
+    }
     for (const f of this.fundos) {
       const k = (zc + f.userData.d) / zc;            // camadas fundas parecem menores: compensa
       f.position.z = -f.userData.d;
       f.scale.set((W * 1.25 + 120) * k, (H * 1.25 + 120) * k, 1);
       const u = f.material.uniforms;
-      u.uG.value = f.userData.g * k; u.uR.value = Math.max(fw, fh) * 0.85 * k;
+      u.uG.value = f.userData.g * k; u.uR.value = Math.max(fw, fh) * 0.85 * k; u.uF.value = 40 * k;
       u.uC.value.set(this.cx * k, this.cy * k); u.uS.value.set(W / 2 * k, H / 2 * k);
+      if (t) u.uT.value.set(t[0] * k, t[1] * k, t[2] * k, t[3] * k);
     }
   }
 
