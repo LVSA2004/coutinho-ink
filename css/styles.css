@@ -288,7 +288,7 @@ main > section { position: relative; padding-block: var(--respiro); }
 
 @media (min-width: 768px) {
   .estilo { --palavra: 13vw; min-height: clamp(560px, 80vh, 840px); }
-  .estilo:nth-child(2) { --palavra: 8.5vw; }
+  .estilo:nth-child(2) { --palavra: 7vw; }   /* cabe ao lado da foto: BLACKWORK inteira legível */
   .estilo:nth-child(3) { --palavra: 9vw; }
   /* tudo na mesma linha do grid: palavra ao centro (atrás), foto num lado, frase embaixo no outro */
   .estilo__word { grid-row: 1 / -1; }
