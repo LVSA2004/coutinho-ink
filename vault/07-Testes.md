@@ -15,4 +15,8 @@ Não há suíte automatizada. A verificação é manual e por script:
 - **Lightbox:** clicar numa obra abre o JPG maior do `href`.
 - **Console e rede:** nenhum 404 nem erro de JS ao rolar a página inteira em 1440 px e 390 px.
 - **Disponíveis:** `display: none` e sem link no menu enquanto estiver `hidden`.
+- **Camada 3D** ([[imersivo]]): testar sempre num checkout limpo (`git archive HEAD` para uma pasta temporária, servida ali), com Chrome headless e `--use-angle=swiftshader --enable-unsafe-swiftshader` para ter WebGL. Conferir: as 4 cenas ganham `.gl`; o bundle só é pedido depois do `load`; mouse e scroll mudam a imagem; com `prefers-reduced-motion` não há canvas nem download do bundle; com o bundle bloqueado a página fica igual ao CSS; sem overflow horizontal em 390 px.
+- **Referências no git:** todo caminho de `src`, `srcset`, `href`, `url()` e `import()` precisa estar em `git ls-files` com a caixa idêntica (o Vercel é Linux, case-sensitive).
+- **`vercel.json`:** validar com `@vercel/routing-utils` (`getTransformedRoutes`); caminhos internos redirecionam, `/`, `/img`, `/js`, `/css` não.
+- **Atributos de `<img>`:** nenhum atributo fora de `src, srcset, sizes, width, height, alt, loading, fetchpriority, class` (aspas soltas em `alt` criam atributos falsos).
 - **Otimizador:** `cd tools && node otimizar-fotos.mjs` (tem assert interno: toda foto sai em AVIF, WebP e JPG). Ver [[otimizar-fotos]].

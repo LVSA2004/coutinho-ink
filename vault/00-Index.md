@@ -20,12 +20,15 @@ Landing page estática (HTML, CSS e JS puro) do estúdio de tatuagem Coutinho In
 - [[css-styles]]
 - [[js-main]]
 - [[otimizar-fotos]]
+- [[imersivo]]: camada 3D (three.js)
 
 ## Decisões
 - [[2026-10-20-fotos-reais-e-disponiveis-oculta]]
+- [[2026-10-20-camada-3d-three]]
 
 ## Log de sessões
 - [[2026-10-20]]
+- [[2026-10-20-camada-3d]]
 
 ## Fora do vault
 `PRODUCT.md` (público e tom) e `DESIGN.md` (tokens, componentes, proibições) na raiz do projeto.

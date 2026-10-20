@@ -1,14 +1,17 @@
 # Coutinho Ink: site
 
-Landing page do estúdio Coutinho Ink (Méier, RJ). É HTML, CSS e JS puro: não tem build, não tem servidor, não tem banco de dados.
+Landing page do estúdio Coutinho Ink (Méier, RJ). É HTML, CSS e JS puro: não tem build no deploy, não tem servidor, não tem banco de dados.
 
 ```
-index.html          a página
-css/styles.css      visual
-js/main.js          filtro, lightbox, animações, endereço
-img/                imagens do site (geradas pelo script)
-fotos/              fotos originais (NÃO vai para o ar)
-tools/              script de otimizar fotos (NÃO vai para o ar)
+index.html            a página
+css/styles.css        visual
+js/main.js            filtro, lightbox, animações, endereço e o carregador da camada 3D
+js/imersivo.min.js    camada 3D (three.js), gerada a partir de js/src/imersivo.js
+js/src/imersivo.js    fonte da camada 3D
+img/                  imagens do site (geradas pelo script)
+vercel.json           redirects que tiram as notas internas do ar
+fotos/                fotos originais (NÃO vai para o ar, fica fora do git)
+tools/                script de otimizar fotos (NÃO vai para o ar)
 ```
 
 ## Ver no computador
@@ -41,6 +44,20 @@ O portfólio, o hero e as miniaturas de Estilos já usam fotos reais (21 no port
 
 A seção `#disponiveis` está com o atributo `hidden` e fora do menu até existirem desenhos reais para vender. Para reativar: gere as fotos `disponivel-<nome>`, coloque um `<article class="painel rv">` por desenho dentro de `.disp__paineis` (o modelo está no comentário do `index.html`), tire o `hidden` da `<section>` e devolva `<a href="#disponiveis">Disponíveis</a>` ao `<nav>` do topo.
 
+## Camada 3D (three.js)
+
+O hero e as três linhas de Estilos têm um canvas WebGL com a foto em perspectiva (inclina com o mouse e com o scroll, com brilho de papel) sobre um fundo de screentone em duas profundidades. A foto nunca é deformada.
+
+- **É melhoria progressiva.** O layout em CSS já está completo sozinho. O 3D só carrega depois do evento `load` e fica de fora com `prefers-reduced-motion`, economia de dados (`saveData`), sem WebGL2 ou se o arquivo falhar. Quando entra, a classe `.gl` aparece na cena e o `<figure>` do DOM some (continua lá para SEO e leitor de tela).
+- **O que vai ao ar** é `js/imersivo.min.js` (~137 KB com gzip), commitado. O Vercel não roda build.
+- **Mudar o efeito:** edite `js/src/imersivo.js` e gere de novo (precisa do Node), na raiz do projeto:
+  ```
+  npm i --no-save three@0.186.1
+  npx esbuild@0.28.2 js/src/imersivo.js --bundle --minify --format=esm --target=es2020 --legal-comments=inline --outfile=js/imersivo.min.js
+  ```
+  Commite o `.min.js` junto com a fonte. `--no-save` não mexe no `package.json`.
+- **Nova foto numa cena:** o `<figure data-foto>` da cena define posição e tamanho; cor da borda, sombra e deslocamento vêm das variáveis `--cartao-*` do CSS (`.hero__panel`, `.estilo__foto`), as mesmas que o fallback usa.
+
 ## Endereço e horário
 
 - **Texto e mapa da página:** constante `ESTUDIO` no começo de `js/main.js`:
@@ -65,6 +82,7 @@ No Windows sem grep, no PowerShell: `Select-String -Path index.html,js\main.js,c
 O site é só uma pasta de arquivos estáticos. **Não publique `fotos/` nem `tools/`** (são pesadas e só servem para você).
 
 - **Netlify Drop (mais fácil):** copie a pasta do projeto sem `fotos/` e `tools/`, entre em https://app.netlify.com/drop e arraste a pasta. Pronto, sai um link.
-- **Vercel ou GitHub Pages:** suba o repositório e aponte para a raiz. Coloque `fotos/` e `tools/` no `.gitignore` (ou `.vercelignore`) para não irem junto.
+- **Vercel (é o que está em uso):** o repositório é o site, a raiz é a pasta publicada e não há build. Cada branch ganha um deploy de preview; produção é o merge no `main`. Como o Vercel serve o repositório inteiro, o `vercel.json` redireciona `vault/`, `docs/`, `tools/`, `fotos/` e os `.md` da raiz para a home, para não expor notas internas. `fotos/` já está no `.gitignore`.
+- **GitHub Pages:** suba o repositório e aponte para a raiz. Lá não existe o `vercel.json`, então mova `vault/` e `docs/` para fora do repositório antes.
 
 Depois de ter o domínio final, troque `https://coutinhoink.com.br/` no `index.html` (canonical, Open Graph e JSON-LD).

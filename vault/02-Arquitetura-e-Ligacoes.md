@@ -22,3 +22,5 @@ fotos/ (originais, fora do git e do ar)
 - `[[js-main]]` filtra `.obra` por `data-estilo` e abre o `href` da obra (JPG maior) no `<dialog>` do lightbox.
 - `[[css-styles]]` tem `picture { display: contents }`: o `<picture>` não vira caixa, então o `<img>` continua sendo o item de grid/flex que o CSS já esperava (`.estilo__thumb`, `.obra`, `.hero__panel`).
 - Seção `#disponiveis` existe no HTML, mas está `hidden` (ver [[2026-10-20-fotos-reais-e-disponiveis-oculta]]).
+- **Camada 3D:** `[[js-main]]` importa `js/imersivo.min.js` depois do `load` (fonte `js/src/imersivo.js`, módulo [[imersivo]]). Para cada `[data-cena]` ele lê o `<figure data-foto>` do `[[index-html]]` (posição por `offset*`, moldura por `--cartao-*` do `[[css-styles]]`), cria um canvas e, no primeiro frame, põe `.gl` na cena; o CSS então esconde o figure. Sem `.gl`, o CSS sozinho é o site completo.
+- **Deploy:** Vercel serve o repositório estático (sem build). `vercel.json` redireciona `vault/`, `docs/`, `tools/`, `fotos/` e os `.md` da raiz para a home. Ver [[2026-10-20-camada-3d-three]].
