@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/(vault|docs|tools|fotos)(/.*)?", "destination": "/", "permanent": false },
+    { "source": "/(CLAUDE|README|DESIGN|PRODUCT).md", "destination": "/", "permanent": false }
+  ]
+}
