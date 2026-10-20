@@ -263,33 +263,34 @@ main > section { position: relative; padding-block: var(--respiro); }
 }
 /* o tipo mostra o estilo: anime com sombra mangá, blackwork chapado, fineline em fio */
 .estilo:nth-child(1) .estilo__word { text-shadow: .05em .05em 0 var(--hanko-2); }
-.estilo:nth-child(3) .estilo__word { color: transparent; -webkit-text-stroke: 1.25px var(--texto-claro); }
+.estilo:nth-child(3) .estilo__word { color: transparent; -webkit-text-stroke: 2px var(--texto-claro); }
 .estilo__foto {
-  --cartao-borda: var(--papel); --cartao-sombra: transparent; --cartao-desloc: 0px; --cartao-bw: 3px;
+  --cartao-borda: var(--texto-mudo); --cartao-sombra: transparent; --cartao-desloc: 0px; --cartao-bw: 2px;
   grid-column: 1 / -1; grid-row: 2; justify-self: end;
   position: relative; z-index: 2;
   width: min(74vw, 420px);
-  margin: calc(var(--palavra) * -.32) 14px 0;   /* sobe sobre a base da palavra; folga p/ rotação e sombra */
+  margin: calc(var(--palavra) * .2) 14px 0;   /* o canto girado sobe ~12px: folga para só encostar na base da palavra */
   border: var(--cartao-bw) solid var(--cartao-borda);
   box-shadow: var(--cartao-desloc) var(--cartao-desloc) 0 var(--cartao-sombra);
   background: var(--tinta-2);
   rotate: 4deg;
 }
 .estilo__foto img { width: 100%; }
-.estilo:nth-child(1) .estilo__foto { --cartao-sombra: var(--hanko-2); --cartao-desloc: 12px; }
-.estilo:nth-child(2) .estilo__foto { --cartao-sombra: var(--papel); --cartao-desloc: 12px; justify-self: start; rotate: -5deg; }
-.estilo:nth-child(3) .estilo__foto { --cartao-bw: 2px; rotate: 3deg; }
+.estilo:nth-child(1) .estilo__foto { --cartao-borda: var(--papel); --cartao-sombra: var(--hanko-2); --cartao-desloc: 12px; }
+/* sombra escura: uma sombra em papel viraria um retângulo branco maior que a foto */
+.estilo:nth-child(2) .estilo__foto { --cartao-sombra: var(--tinta-3); --cartao-desloc: 12px; justify-self: start; rotate: -5deg; }
+.estilo:nth-child(3) .estilo__foto { rotate: 3deg; }
 .estilo__frase {
   grid-column: 1 / -1; grid-row: 3; position: relative; z-index: 3;
   margin-top: 1.4rem; max-width: 38ch;
-  font: 400 clamp(1.25rem, 2vw, 1.6rem)/1.25 var(--f-serif);
-  color: var(--texto-mudo);
+  font: 400 clamp(1.3rem, 2.2vw, 1.75rem)/1.3 var(--f-serif);
+  color: oklch(0.88 0.012 85);   /* 12:1 sobre a tinta */
 }
 
 @media (min-width: 768px) {
-  .estilo { --palavra: 13vw; min-height: clamp(560px, 80vh, 840px); }
-  .estilo:nth-child(2) { --palavra: 7vw; }   /* cabe ao lado da foto: BLACKWORK inteira legível */
-  .estilo:nth-child(3) { --palavra: 9vw; }
+  .estilo { --palavra: min(12vw, 173px); min-height: clamp(560px, 80vh, 840px); }
+  .estilo:nth-child(2) { --palavra: min(6.8vw, 98px); }   /* cabe ao lado da foto: BLACKWORK inteira legível */
+  .estilo:nth-child(3) { --palavra: min(7.5vw, 108px); }
   /* tudo na mesma linha do grid: palavra ao centro (atrás), foto num lado, frase embaixo no outro */
   .estilo__word { grid-row: 1 / -1; }
   .estilo:nth-child(2) .estilo__word { text-align: right; }
@@ -618,8 +619,8 @@ main > section { position: relative; padding-block: var(--respiro); }
 .hero__lines { --px-de: translateY(0); --px-ate: translateY(calc(-34vh * var(--amp))); }
 
 /* amplitude moderada: a palavra desliza atrás da foto sem perder as letras do começo */
-.estilo__word[data-dir="dir"] { --px-de: translateX(calc(-4vw * var(--amp))); --px-ate: translateX(calc(4vw * var(--amp))); }
-.estilo__word[data-dir="esq"] { --px-de: translateX(calc(4vw * var(--amp))); --px-ate: translateX(calc(-4vw * var(--amp))); }
+.estilo__word[data-dir="dir"] { --px-de: translateX(calc(-2vw * var(--amp))); --px-ate: translateX(calc(2vw * var(--amp))); }
+.estilo__word[data-dir="esq"] { --px-de: translateX(calc(2vw * var(--amp))); --px-ate: translateX(calc(-2vw * var(--amp))); }
 
 @media (min-width: 1024px) {
   .portfolio__col:nth-child(1) { --px-de: translateY(30px); --px-ate: translateY(-30px); }
