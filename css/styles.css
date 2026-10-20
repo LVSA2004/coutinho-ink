@@ -43,6 +43,7 @@ body {
   padding-bottom: 56px; /* barra fixa do mobile */
 }
 img, svg { display: block; max-width: 100%; height: auto; }
+picture { display: contents; }
 a { color: inherit; }
 h1, h2, h3, p, figure, ol, ul { margin: 0; }
 [hidden] { display: none !important; }

@@ -83,7 +83,6 @@
     <nav class="topo__nav" aria-label="Seções">
       <a href="#estilos">Estilos</a>
       <a href="#portfolio">Portfólio</a>
-      <a href="#disponiveis">Disponíveis</a>
       <a href="#artista">Artista</a>
       <a href="#faq">Dúvidas</a>
       <a href="#local">Local</a>
@@ -109,7 +108,11 @@
           <span class="sr-only">: estúdio de tatuagem no Méier, Zona Norte do Rio de Janeiro</span>
         </h1>
         <figure class="hero__panel px" data-px-range="exit">
-          <img src="img/ph/hero.svg" width="800" height="1000" alt="Tatuagem blackwork de destaque do Coutinho Ink" fetchpriority="high">
+          <picture>
+            <source type="image/avif" srcset="img/anime-01-480.avif 480w, img/anime-01-960.avif 960w, img/anime-01-1142.avif 1142w" sizes="(min-width: 1024px) 460px, 76vw">
+            <source type="image/webp" srcset="img/anime-01-480.webp 480w, img/anime-01-960.webp 960w, img/anime-01-1142.webp 1142w" sizes="(min-width: 1024px) 460px, 76vw">
+            <img src="img/anime-01-960.jpg" srcset="img/anime-01-480.jpg 480w, img/anime-01-960.jpg 960w, img/anime-01-1142.jpg 1142w" sizes="(min-width: 1024px) 460px, 76vw" width="1142" height="1600" fetchpriority="high" alt="Tatuagem anime de destaque: de personagem com o rosto na sombra e cabelo em preto sólido">
+          </picture>
         </figure>
         <svg class="hero__lines px" data-px-range="exit" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
           <path d="M40 520 C 160 380, 260 460, 340 300 S 520 120, 580 60"/>
@@ -136,17 +139,29 @@
         <li class="estilo">
           <span class="estilo__word px" data-dir="dir">ANIME</span>
           <p class="estilo__frase rv">Personagens de anime, mangá e games recriados com o traço da casa, não copiados do frame.</p>
-          <img class="estilo__thumb px" src="img/ph/anime-01.svg" width="800" height="1000" alt="" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="img/anime-02-480.avif">
+            <source type="image/webp" srcset="img/anime-02-480.webp">
+            <img class="estilo__thumb px" src="img/anime-02-480.jpg" width="480" height="580" alt="" loading="lazy">
+          </picture>
         </li>
         <li class="estilo">
           <span class="estilo__word px" data-dir="esq">BLACKWORK</span>
           <p class="estilo__frase rv">Preto chapado, contraste máximo e peças que envelhecem bem na pele.</p>
-          <img class="estilo__thumb px" src="img/ph/blackwork-01.svg" width="800" height="800" alt="" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="img/blackwork-01-480.avif">
+            <source type="image/webp" srcset="img/blackwork-01-480.webp">
+            <img class="estilo__thumb px" src="img/blackwork-01-480.jpg" width="480" height="666" alt="" loading="lazy">
+          </picture>
         </li>
         <li class="estilo">
           <span class="estilo__word px" data-dir="dir">FINELINE</span>
           <p class="estilo__frase rv">Linha de agulha única, delicada e precisa, para quem quer detalhe sem peso.</p>
-          <img class="estilo__thumb px" src="img/ph/fineline-01.svg" width="800" height="1200" alt="" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="img/fineline-01-480.avif">
+            <source type="image/webp" srcset="img/fineline-01-480.webp">
+            <img class="estilo__thumb px" src="img/fineline-01-480.jpg" width="480" height="658" alt="" loading="lazy">
+          </picture>
         </li>
       </ul>
     </section>
@@ -163,25 +178,159 @@
         </div>
       </div>
 
-      <!-- TROCAR: fotos reais (rode tools/otimizar-fotos.mjs) -->
       <div class="portfolio__grade">
         <div class="portfolio__col px">
-          <a class="obra" data-estilo="anime" href="img/ph/anime-01.svg"><img src="img/ph/anime-01.svg" width="800" height="1000" alt="Tatuagem anime" loading="lazy"></a>
-          <a class="obra" data-estilo="blackwork" href="img/ph/blackwork-01.svg"><img src="img/ph/blackwork-01.svg" width="800" height="800" alt="Tatuagem blackwork" loading="lazy"></a>
-          <a class="obra" data-estilo="fineline" href="img/ph/fineline-01.svg"><img src="img/ph/fineline-01.svg" width="800" height="1200" alt="Tatuagem fineline" loading="lazy"></a>
-          <a class="obra" data-estilo="anime" href="img/ph/anime-04.svg"><img src="img/ph/anime-04.svg" width="800" height="800" alt="Tatuagem anime" loading="lazy"></a>
+          <a class="obra" data-estilo="anime" href="img/anime-01-1142.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/anime-01-480.avif 480w, img/anime-01-960.avif 960w, img/anime-01-1142.avif 1142w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/anime-01-480.webp 480w, img/anime-01-960.webp 960w, img/anime-01-1142.webp 1142w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/anime-01-960.jpg" srcset="img/anime-01-480.jpg 480w, img/anime-01-960.jpg 960w, img/anime-01-1142.jpg 1142w" sizes="(min-width: 1024px) 33vw, 50vw" width="1142" height="1600" loading="lazy" alt="Tatuagem anime de personagem com o rosto na sombra e cabelo em preto sólido">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-02-1144.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-02-480.avif 480w, img/blackwork-02-960.avif 960w, img/blackwork-02-1144.avif 1144w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-02-480.webp 480w, img/blackwork-02-960.webp 960w, img/blackwork-02-1144.webp 1144w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-02-960.jpg" srcset="img/blackwork-02-480.jpg 480w, img/blackwork-02-960.jpg 960w, img/blackwork-02-1144.jpg 1144w" sizes="(min-width: 1024px) 33vw, 50vw" width="1144" height="1600" loading="lazy" alt="Tatuagem blackwork de coração anatômico com asas e revólver">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-03-1120.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-03-480.avif 480w, img/fineline-03-960.avif 960w, img/fineline-03-1120.avif 1120w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-03-480.webp 480w, img/fineline-03-960.webp 960w, img/fineline-03-1120.webp 1120w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-03-960.jpg" srcset="img/fineline-03-480.jpg 480w, img/fineline-03-960.jpg 960w, img/fineline-03-1120.jpg 1120w" sizes="(min-width: 1024px) 33vw, 50vw" width="1120" height="1600" loading="lazy" alt="Tatuagem fineline de flor, borboletas e frase nas costas">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="anime" href="img/anime-04-1200.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/anime-04-480.avif 480w, img/anime-04-960.avif 960w, img/anime-04-1200.avif 1200w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/anime-04-480.webp 480w, img/anime-04-960.webp 960w, img/anime-04-1200.webp 1200w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/anime-04-960.jpg" srcset="img/anime-04-480.jpg 480w, img/anime-04-960.jpg 960w, img/anime-04-1200.jpg 1200w" sizes="(min-width: 1024px) 33vw, 50vw" width="1200" height="1600" loading="lazy" alt="Tatuagem anime de personagem com olho em espiral e cabelo em chamas">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-05-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-05-480.avif 480w, img/blackwork-05-960.avif 960w, img/blackwork-05-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-05-480.webp 480w, img/blackwork-05-960.webp 960w, img/blackwork-05-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-05-960.jpg" srcset="img/blackwork-05-480.jpg 480w, img/blackwork-05-960.jpg 960w, img/blackwork-05-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1332" loading="lazy" alt="Tatuagem blackwork de marinheira de perfil com pontilhismo">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-06-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-06-480.avif 480w, img/fineline-06-960.avif 960w, img/fineline-06-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-06-480.webp 480w, img/fineline-06-960.webp 960w, img/fineline-06-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-06-960.jpg" srcset="img/fineline-06-480.jpg 480w, img/fineline-06-960.jpg 960w, img/fineline-06-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1273" loading="lazy" alt="Tatuagem fineline de mãe com bebê anjo e flores">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-07-1142.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-07-480.avif 480w, img/blackwork-07-960.avif 960w, img/blackwork-07-1142.avif 1142w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-07-480.webp 480w, img/blackwork-07-960.webp 960w, img/blackwork-07-1142.webp 1142w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-07-960.jpg" srcset="img/blackwork-07-480.jpg 480w, img/blackwork-07-960.jpg 960w, img/blackwork-07-1142.jpg 1142w" sizes="(min-width: 1024px) 33vw, 50vw" width="1142" height="1600" loading="lazy" alt="Tatuagem blackwork de lettering cursivo em preto sólido">
+            </picture>
+          </a>
         </div>
         <div class="portfolio__col px">
-          <a class="obra" data-estilo="blackwork" href="img/ph/blackwork-02.svg"><img src="img/ph/blackwork-02.svg" width="800" height="1200" alt="Tatuagem blackwork" loading="lazy"></a>
-          <a class="obra" data-estilo="fineline" href="img/ph/fineline-02.svg"><img src="img/ph/fineline-02.svg" width="800" height="1000" alt="Tatuagem fineline" loading="lazy"></a>
-          <a class="obra" data-estilo="anime" href="img/ph/anime-02.svg"><img src="img/ph/anime-02.svg" width="800" height="800" alt="Tatuagem anime" loading="lazy"></a>
-          <a class="obra" data-estilo="blackwork" href="img/ph/blackwork-04.svg"><img src="img/ph/blackwork-04.svg" width="800" height="1000" alt="Tatuagem blackwork" loading="lazy"></a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-01-1154.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-01-480.avif 480w, img/blackwork-01-960.avif 960w, img/blackwork-01-1154.avif 1154w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-01-480.webp 480w, img/blackwork-01-960.webp 960w, img/blackwork-01-1154.webp 1154w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-01-960.jpg" srcset="img/blackwork-01-480.jpg 480w, img/blackwork-01-960.jpg 960w, img/blackwork-01-1154.jpg 1154w" sizes="(min-width: 1024px) 33vw, 50vw" width="1154" height="1600" loading="lazy" alt="Tatuagem blackwork de besouro com peônia e ornamentos em preto chapado">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-02-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-02-480.avif 480w, img/fineline-02-960.avif 960w, img/fineline-02-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-02-480.webp 480w, img/fineline-02-960.webp 960w, img/fineline-02-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-02-960.jpg" srcset="img/fineline-02-480.jpg 480w, img/fineline-02-960.jpg 960w, img/fineline-02-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1549" loading="lazy" alt="Tatuagem fineline de fênix, frase e ramo ao longo da coluna">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="anime" href="img/anime-03-1168.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/anime-03-480.avif 480w, img/anime-03-960.avif 960w, img/anime-03-1168.avif 1168w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/anime-03-480.webp 480w, img/anime-03-960.webp 960w, img/anime-03-1168.webp 1168w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/anime-03-960.jpg" srcset="img/anime-03-480.jpg 480w, img/anime-03-960.jpg 960w, img/anime-03-1168.jpg 1168w" sizes="(min-width: 1024px) 33vw, 50vw" width="1168" height="1600" loading="lazy" alt="Tatuagem anime do Majin Vegeta com aura, em linha preta">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-04-1080.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-04-480.avif 480w, img/blackwork-04-960.avif 960w, img/blackwork-04-1080.avif 1080w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-04-480.webp 480w, img/blackwork-04-960.webp 960w, img/blackwork-04-1080.webp 1080w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-04-960.jpg" srcset="img/blackwork-04-480.jpg 480w, img/blackwork-04-960.jpg 960w, img/blackwork-04-1080.jpg 1080w" sizes="(min-width: 1024px) 33vw, 50vw" width="1080" height="1295" loading="lazy" alt="Tatuagem blackwork de tartaruga marinha em pontilhismo">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-05-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-05-480.avif 480w, img/fineline-05-960.avif 960w, img/fineline-05-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-05-480.webp 480w, img/fineline-05-960.webp 960w, img/fineline-05-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-05-960.jpg" srcset="img/fineline-05-480.jpg 480w, img/fineline-05-960.jpg 960w, img/fineline-05-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1434" loading="lazy" alt="Tatuagem fineline de flores e borboletas no antebraço">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="anime" href="img/anime-06-1374.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/anime-06-480.avif 480w, img/anime-06-960.avif 960w, img/anime-06-1374.avif 1374w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/anime-06-480.webp 480w, img/anime-06-960.webp 960w, img/anime-06-1374.webp 1374w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/anime-06-960.jpg" srcset="img/anime-06-480.jpg 480w, img/anime-06-960.jpg 960w, img/anime-06-1374.jpg 1374w" sizes="(min-width: 1024px) 33vw, 50vw" width="1374" height="1600" loading="lazy" alt="Tatuagem do Dragão Branco de Olhos Azuis, de Yu-Gi-Oh, em traço preto e pontilhismo">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-07-1148.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-07-480.avif 480w, img/fineline-07-960.avif 960w, img/fineline-07-1148.avif 1148w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-07-480.webp 480w, img/fineline-07-960.webp 960w, img/fineline-07-1148.webp 1148w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-07-960.jpg" srcset="img/fineline-07-480.jpg 480w, img/fineline-07-960.jpg 960w, img/fineline-07-1148.jpg 1148w" sizes="(min-width: 1024px) 33vw, 50vw" width="1148" height="1600" loading="lazy" alt="Tatuagem fineline com a palavra "família", coração e borboleta em um só traço">
+            </picture>
+          </a>
         </div>
         <div class="portfolio__col px">
-          <a class="obra" data-estilo="fineline" href="img/ph/fineline-03.svg"><img src="img/ph/fineline-03.svg" width="800" height="800" alt="Tatuagem fineline" loading="lazy"></a>
-          <a class="obra" data-estilo="anime" href="img/ph/anime-03.svg"><img src="img/ph/anime-03.svg" width="800" height="1200" alt="Tatuagem anime" loading="lazy"></a>
-          <a class="obra" data-estilo="blackwork" href="img/ph/blackwork-03.svg"><img src="img/ph/blackwork-03.svg" width="800" height="1000" alt="Tatuagem blackwork" loading="lazy"></a>
-          <a class="obra" data-estilo="fineline" href="img/ph/fineline-04.svg"><img src="img/ph/fineline-04.svg" width="800" height="800" alt="Tatuagem fineline" loading="lazy"></a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-01-1168.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-01-480.avif 480w, img/fineline-01-960.avif 960w, img/fineline-01-1168.avif 1168w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-01-480.webp 480w, img/fineline-01-960.webp 960w, img/fineline-01-1168.webp 1168w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-01-960.jpg" srcset="img/fineline-01-480.jpg 480w, img/fineline-01-960.jpg 960w, img/fineline-01-1168.jpg 1168w" sizes="(min-width: 1024px) 33vw, 50vw" width="1168" height="1600" loading="lazy" alt="Tatuagem fineline de ramos floridos contornando o antebraço com a frase "nem toda dor é constante"">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="anime" href="img/anime-02-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/anime-02-480.avif 480w, img/anime-02-960.avif 960w, img/anime-02-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/anime-02-480.webp 480w, img/anime-02-960.webp 960w, img/anime-02-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/anime-02-960.jpg" srcset="img/anime-02-480.jpg 480w, img/anime-02-960.jpg 960w, img/anime-02-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1424" loading="lazy" alt="Tatuagem anime do Vegeta gritando, de Dragon Ball, em traço preto">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-03-1028.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-03-480.avif 480w, img/blackwork-03-960.avif 960w, img/blackwork-03-1028.avif 1028w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-03-480.webp 480w, img/blackwork-03-960.webp 960w, img/blackwork-03-1028.webp 1028w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-03-960.jpg" srcset="img/blackwork-03-480.jpg 480w, img/blackwork-03-960.jpg 960w, img/blackwork-03-1028.jpg 1028w" sizes="(min-width: 1024px) 33vw, 50vw" width="1028" height="1600" loading="lazy" alt="Tatuagem blackwork de homem de terno cobrindo o rosto com o chapéu, envolto em chamas">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-04-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-04-480.avif 480w, img/fineline-04-960.avif 960w, img/fineline-04-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-04-480.webp 480w, img/fineline-04-960.webp 960w, img/fineline-04-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-04-960.jpg" srcset="img/fineline-04-480.jpg 480w, img/fineline-04-960.jpg 960w, img/fineline-04-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1557" loading="lazy" alt="Tatuagem fineline de flor de lótus ornamental com lua e detalhes">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="blackwork" href="img/blackwork-06-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-06-480.avif 480w, img/blackwork-06-960.avif 960w, img/blackwork-06-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/blackwork-06-480.webp 480w, img/blackwork-06-960.webp 960w, img/blackwork-06-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/blackwork-06-960.jpg" srcset="img/blackwork-06-480.jpg 480w, img/blackwork-06-960.jpg 960w, img/blackwork-06-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1582" loading="lazy" alt="Tatuagem blackwork de duas carpas em traço firme com sombra">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="anime" href="img/anime-05-1454.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/anime-05-480.avif 480w, img/anime-05-960.avif 960w, img/anime-05-1454.avif 1454w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/anime-05-480.webp 480w, img/anime-05-960.webp 960w, img/anime-05-1454.webp 1454w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/anime-05-960.jpg" srcset="img/anime-05-480.jpg 480w, img/anime-05-960.jpg 960w, img/anime-05-1454.jpg 1454w" sizes="(min-width: 1024px) 33vw, 50vw" width="1454" height="1600" loading="lazy" alt="Tatuagem anime do Mestre Kame sobre a tartaruga, de Dragon Ball">
+            </picture>
+          </a>
+          <a class="obra" data-estilo="fineline" href="img/fineline-08-1179.jpg">
+            <picture>
+              <source type="image/avif" srcset="img/fineline-08-480.avif 480w, img/fineline-08-960.avif 960w, img/fineline-08-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <source type="image/webp" srcset="img/fineline-08-480.webp 480w, img/fineline-08-960.webp 960w, img/fineline-08-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
+              <img src="img/fineline-08-960.jpg" srcset="img/fineline-08-480.jpg 480w, img/fineline-08-960.jpg 960w, img/fineline-08-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1300" loading="lazy" alt="Tatuagem fineline com a frase "tudo passa" e dois corações">
+            </picture>
+          </a>
         </div>
       </div>
 
@@ -197,7 +346,7 @@
     </dialog>
 
     <!-- 4. DESENHOS DISPONÍVEIS (mangá) -->
-    <section class="disp papel" id="disponiveis" aria-labelledby="disp-titulo">
+    <section class="disp papel" id="disponiveis" hidden aria-labelledby="disp-titulo">
       <div class="disp__speed px" aria-hidden="true"></div>
       <span class="disp__sfx disp__sfx--a px" aria-hidden="true">ドン</span>
       <span class="disp__sfx disp__sfx--b px" aria-hidden="true">ゴゴゴ</span>
@@ -207,55 +356,10 @@
         <p class="disp__intro">Artes autorais prontas para tatuar. Cada desenho é feito <em>uma única vez</em>: quando sai, sai.</p>
       </header>
 
-      <!-- TROCAR: desenhos reais (fotos/disponivel-<nome>.jpg) -->
-      <div class="disp__paineis">
-        <article class="painel painel--alto rv">
-          <img src="img/ph/disponivel-mascara-oni.svg" width="800" height="1000" alt="Desenho disponível: Máscara Oni" loading="lazy">
-          <span class="carimbo">DISPONÍVEL!</span>
-          <div class="painel__rodape">
-            <h3>Máscara Oni</h3>
-            <a class="btn btn--tinta btn--mini" href="https://wa.me/5521996207171?text=Oi!%20O%20desenho%20%22M%C3%A1scara%20Oni%22%20ainda%20t%C3%A1%20dispon%C3%ADvel%3F%20Quero%20agendar." target="_blank" rel="noopener">Quero esse</a>
-          </div>
-        </article>
-        <article class="painel painel--largo rv">
-          <img src="img/ph/disponivel-caveira-samurai.svg" width="800" height="1000" alt="Desenho disponível: Caveira Samurai" loading="lazy">
-          <span class="carimbo">DISPONÍVEL!</span>
-          <div class="painel__rodape">
-            <h3>Caveira Samurai</h3>
-            <a class="btn btn--tinta btn--mini" href="https://wa.me/5521996207171?text=Oi!%20O%20desenho%20%22Caveira%20Samurai%22%20ainda%20t%C3%A1%20dispon%C3%ADvel%3F%20Quero%20agendar." target="_blank" rel="noopener">Quero esse</a>
-          </div>
-        </article>
-        <article class="painel rv">
-          <img src="img/ph/disponivel-carpa-koi.svg" width="800" height="1000" alt="Desenho disponível: Carpa Koi" loading="lazy">
-          <span class="carimbo">DISPONÍVEL!</span>
-          <div class="painel__rodape">
-            <h3>Carpa Koi</h3>
-            <a class="btn btn--tinta btn--mini" href="https://wa.me/5521996207171?text=Oi!%20O%20desenho%20%22Carpa%20Koi%22%20ainda%20t%C3%A1%20dispon%C3%ADvel%3F%20Quero%20agendar." target="_blank" rel="noopener">Quero esse</a>
-          </div>
-        </article>
-        <aside class="balao rv rv--fade" aria-labelledby="flash-titulo">
-          <p class="balao__grito" aria-hidden="true">FLASH!</p>
-          <h3 id="flash-titulo">Flash de traço simples</h3>
-          <p>Até 8 cm, blackwork sem cor, preço especial e vagas limitadas.</p>
-          <a class="btn btn--tinta btn--mini" href="https://wa.me/5521996207171?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20do%20flash%20(at%C3%A9%208%20cm%2C%20blackwork)." target="_blank" rel="noopener">Pegar minha vaga</a>
-        </aside>
-        <article class="painel rv">
-          <img src="img/ph/disponivel-gato-e-lua.svg" width="800" height="1000" alt="Desenho disponível: Gato e Lua" loading="lazy">
-          <span class="carimbo">DISPONÍVEL!</span>
-          <div class="painel__rodape">
-            <h3>Gato e Lua</h3>
-            <a class="btn btn--tinta btn--mini" href="https://wa.me/5521996207171?text=Oi!%20O%20desenho%20%22Gato%20e%20Lua%22%20ainda%20t%C3%A1%20dispon%C3%ADvel%3F%20Quero%20agendar." target="_blank" rel="noopener">Quero esse</a>
-          </div>
-        </article>
-        <article class="painel painel--largo rv">
-          <img src="img/ph/disponivel-katana-e-rosa.svg" width="800" height="1000" alt="Desenho disponível: Katana e Rosa" loading="lazy">
-          <span class="carimbo">DISPONÍVEL!</span>
-          <div class="painel__rodape">
-            <h3>Katana e Rosa</h3>
-            <a class="btn btn--tinta btn--mini" href="https://wa.me/5521996207171?text=Oi!%20O%20desenho%20%22Katana%20e%20Rosa%22%20ainda%20t%C3%A1%20dispon%C3%ADvel%3F%20Quero%20agendar." target="_blank" rel="noopener">Quero esse</a>
-          </div>
-        </article>
-      </div>
+      <!-- Reativar quando houver desenhos reais: gerar fotos/disponivel-<nome>.jpg, rodar tools/otimizar-fotos.mjs,
+           colocar um <article class="painel rv"> (img + <span class="carimbo">DISPONÍVEL!</span> + .painel__rodape) por desenho
+           dentro de .disp__paineis, tirar o hidden desta section e devolver o link #disponiveis ao menu. O balão do FLASH também volta aqui. -->
+      <div class="disp__paineis"></div>
     </section>
 
     <!-- 5. ARTISTA -->
