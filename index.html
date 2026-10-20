@@ -100,18 +100,18 @@
 
     <!-- 1. HERO -->
     <section class="hero papel" id="inicio" aria-labelledby="hero-titulo">
-      <div class="hero__cena px" data-px-range="exit">
+      <div class="hero__cena px" data-px-range="exit" data-cena="hero">
         <div class="hero__tone px" data-px-range="exit" aria-hidden="true"></div>
         <h1 class="hero__word px" data-px-range="exit" id="hero-titulo">
           <span class="hero__word-a">COUTINHO</span>
           <span class="hero__word-b">INK</span>
           <span class="sr-only">: estúdio de tatuagem no Méier, Zona Norte do Rio de Janeiro</span>
         </h1>
-        <figure class="hero__panel px" data-px-range="exit">
+        <figure class="hero__panel px" data-px-range="exit" data-foto>
           <picture>
             <source type="image/avif" srcset="img/anime-01-480.avif 480w, img/anime-01-960.avif 960w, img/anime-01-1142.avif 1142w" sizes="(min-width: 1024px) 460px, 76vw">
             <source type="image/webp" srcset="img/anime-01-480.webp 480w, img/anime-01-960.webp 960w, img/anime-01-1142.webp 1142w" sizes="(min-width: 1024px) 460px, 76vw">
-            <img src="img/anime-01-960.jpg" srcset="img/anime-01-480.jpg 480w, img/anime-01-960.jpg 960w, img/anime-01-1142.jpg 1142w" sizes="(min-width: 1024px) 460px, 76vw" width="1142" height="1600" fetchpriority="high" alt="Tatuagem anime de destaque: de personagem com o rosto na sombra e cabelo em preto sólido">
+            <img src="img/anime-01-960.jpg" srcset="img/anime-01-480.jpg 480w, img/anime-01-960.jpg 960w, img/anime-01-1142.jpg 1142w" sizes="(min-width: 1024px) 460px, 76vw" width="1142" height="1600" fetchpriority="high" alt="Tatuagem anime de personagem com o rosto na sombra e cabelo em preto sólido">
           </picture>
         </figure>
         <svg class="hero__lines px" data-px-range="exit" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
@@ -136,32 +136,38 @@
     <section class="estilos tinta" id="estilos" aria-labelledby="estilos-titulo">
       <h2 class="rotulo" id="estilos-titulo">O que sai daqui</h2>
       <ul class="estilos__lista">
-        <li class="estilo">
+        <li class="estilo" data-cena>
           <span class="estilo__word px" data-dir="dir">ANIME</span>
           <p class="estilo__frase rv">Personagens de anime, mangá e games recriados com o traço da casa, não copiados do frame.</p>
-          <picture>
-            <source type="image/avif" srcset="img/anime-02-480.avif">
-            <source type="image/webp" srcset="img/anime-02-480.webp">
-            <img class="estilo__thumb px" src="img/anime-02-480.jpg" width="480" height="580" alt="" loading="lazy">
-          </picture>
+          <figure class="estilo__foto" data-foto>
+            <picture>
+              <source type="image/avif" srcset="img/anime-02-480.avif 480w, img/anime-02-960.avif 960w" sizes="(min-width: 768px) 36vw, 72vw">
+              <source type="image/webp" srcset="img/anime-02-480.webp 480w, img/anime-02-960.webp 960w" sizes="(min-width: 768px) 36vw, 72vw">
+              <img src="img/anime-02-960.jpg" srcset="img/anime-02-480.jpg 480w, img/anime-02-960.jpg 960w" sizes="(min-width: 768px) 36vw, 72vw" width="1179" height="1424" alt="Tatuagem anime do Vegeta gritando, de Dragon Ball, em traço preto" loading="lazy">
+            </picture>
+          </figure>
         </li>
-        <li class="estilo">
+        <li class="estilo" data-cena>
           <span class="estilo__word px" data-dir="esq">BLACKWORK</span>
           <p class="estilo__frase rv">Preto chapado, contraste máximo e peças que envelhecem bem na pele.</p>
-          <picture>
-            <source type="image/avif" srcset="img/blackwork-01-480.avif">
-            <source type="image/webp" srcset="img/blackwork-01-480.webp">
-            <img class="estilo__thumb px" src="img/blackwork-01-480.jpg" width="480" height="666" alt="" loading="lazy">
-          </picture>
+          <figure class="estilo__foto" data-foto>
+            <picture>
+              <source type="image/avif" srcset="img/blackwork-01-480.avif 480w, img/blackwork-01-960.avif 960w" sizes="(min-width: 768px) 36vw, 72vw">
+              <source type="image/webp" srcset="img/blackwork-01-480.webp 480w, img/blackwork-01-960.webp 960w" sizes="(min-width: 768px) 36vw, 72vw">
+              <img src="img/blackwork-01-960.jpg" srcset="img/blackwork-01-480.jpg 480w, img/blackwork-01-960.jpg 960w" sizes="(min-width: 768px) 36vw, 72vw" width="1154" height="1600" alt="Tatuagem blackwork de besouro com peônia e ornamentos em preto chapado" loading="lazy">
+            </picture>
+          </figure>
         </li>
-        <li class="estilo">
+        <li class="estilo" data-cena>
           <span class="estilo__word px" data-dir="dir">FINELINE</span>
           <p class="estilo__frase rv">Linha de agulha única, delicada e precisa, para quem quer detalhe sem peso.</p>
-          <picture>
-            <source type="image/avif" srcset="img/fineline-01-480.avif">
-            <source type="image/webp" srcset="img/fineline-01-480.webp">
-            <img class="estilo__thumb px" src="img/fineline-01-480.jpg" width="480" height="658" alt="" loading="lazy">
-          </picture>
+          <figure class="estilo__foto" data-foto>
+            <picture>
+              <source type="image/avif" srcset="img/fineline-01-480.avif 480w, img/fineline-01-960.avif 960w" sizes="(min-width: 768px) 36vw, 72vw">
+              <source type="image/webp" srcset="img/fineline-01-480.webp 480w, img/fineline-01-960.webp 960w" sizes="(min-width: 768px) 36vw, 72vw">
+              <img src="img/fineline-01-960.jpg" srcset="img/fineline-01-480.jpg 480w, img/fineline-01-960.jpg 960w" sizes="(min-width: 768px) 36vw, 72vw" width="1168" height="1600" alt="Tatuagem fineline de ramos floridos contornando o antebraço com a frase “nem toda dor é constante”" loading="lazy">
+            </picture>
+          </figure>
         </li>
       </ul>
     </section>
@@ -277,7 +283,7 @@
             <picture>
               <source type="image/avif" srcset="img/fineline-07-480.avif 480w, img/fineline-07-960.avif 960w, img/fineline-07-1148.avif 1148w" sizes="(min-width: 1024px) 33vw, 50vw">
               <source type="image/webp" srcset="img/fineline-07-480.webp 480w, img/fineline-07-960.webp 960w, img/fineline-07-1148.webp 1148w" sizes="(min-width: 1024px) 33vw, 50vw">
-              <img src="img/fineline-07-960.jpg" srcset="img/fineline-07-480.jpg 480w, img/fineline-07-960.jpg 960w, img/fineline-07-1148.jpg 1148w" sizes="(min-width: 1024px) 33vw, 50vw" width="1148" height="1600" loading="lazy" alt="Tatuagem fineline com a palavra "família", coração e borboleta em um só traço">
+              <img src="img/fineline-07-960.jpg" srcset="img/fineline-07-480.jpg 480w, img/fineline-07-960.jpg 960w, img/fineline-07-1148.jpg 1148w" sizes="(min-width: 1024px) 33vw, 50vw" width="1148" height="1600" loading="lazy" alt="Tatuagem fineline com a palavra “família”, coração e borboleta em um só traço">
             </picture>
           </a>
         </div>
@@ -286,7 +292,7 @@
             <picture>
               <source type="image/avif" srcset="img/fineline-01-480.avif 480w, img/fineline-01-960.avif 960w, img/fineline-01-1168.avif 1168w" sizes="(min-width: 1024px) 33vw, 50vw">
               <source type="image/webp" srcset="img/fineline-01-480.webp 480w, img/fineline-01-960.webp 960w, img/fineline-01-1168.webp 1168w" sizes="(min-width: 1024px) 33vw, 50vw">
-              <img src="img/fineline-01-960.jpg" srcset="img/fineline-01-480.jpg 480w, img/fineline-01-960.jpg 960w, img/fineline-01-1168.jpg 1168w" sizes="(min-width: 1024px) 33vw, 50vw" width="1168" height="1600" loading="lazy" alt="Tatuagem fineline de ramos floridos contornando o antebraço com a frase "nem toda dor é constante"">
+              <img src="img/fineline-01-960.jpg" srcset="img/fineline-01-480.jpg 480w, img/fineline-01-960.jpg 960w, img/fineline-01-1168.jpg 1168w" sizes="(min-width: 1024px) 33vw, 50vw" width="1168" height="1600" loading="lazy" alt="Tatuagem fineline de ramos floridos contornando o antebraço com a frase “nem toda dor é constante”">
             </picture>
           </a>
           <a class="obra" data-estilo="anime" href="img/anime-02-1179.jpg">
@@ -328,7 +334,7 @@
             <picture>
               <source type="image/avif" srcset="img/fineline-08-480.avif 480w, img/fineline-08-960.avif 960w, img/fineline-08-1179.avif 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
               <source type="image/webp" srcset="img/fineline-08-480.webp 480w, img/fineline-08-960.webp 960w, img/fineline-08-1179.webp 1179w" sizes="(min-width: 1024px) 33vw, 50vw">
-              <img src="img/fineline-08-960.jpg" srcset="img/fineline-08-480.jpg 480w, img/fineline-08-960.jpg 960w, img/fineline-08-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1300" loading="lazy" alt="Tatuagem fineline com a frase "tudo passa" e dois corações">
+              <img src="img/fineline-08-960.jpg" srcset="img/fineline-08-480.jpg 480w, img/fineline-08-960.jpg 960w, img/fineline-08-1179.jpg 1179w" sizes="(min-width: 1024px) 33vw, 50vw" width="1179" height="1300" loading="lazy" alt="Tatuagem fineline com a frase “tudo passa” e dois corações">
             </picture>
           </a>
         </div>

@@ -189,27 +189,30 @@ main > section { position: relative; padding-block: var(--respiro); }
   color: transparent;
   -webkit-text-stroke: clamp(1.5px, .25vw, 3px) var(--tinta);
 }
+/* moldura do cartão: o fallback CSS e a camada 3D (js/src/imersivo.js) leem estas mesmas variáveis */
 .hero__panel {
+  --cartao-borda: var(--tinta); --cartao-sombra: var(--tinta); --cartao-desloc: 10px; --cartao-bw: 4px;
   position: relative; z-index: 2;
   align-self: flex-end;
   width: min(76%, 420px);
   margin-top: clamp(-90px, -8vw, -24px);
-  border: 4px solid var(--tinta);
+  border: var(--cartao-bw) solid var(--cartao-borda);
   background: var(--papel);
-  box-shadow: 10px 10px 0 var(--tinta);
+  box-shadow: var(--cartao-desloc) var(--cartao-desloc) 0 var(--cartao-sombra);
   rotate: -3deg;
   overflow: clip;
 }
 .hero__panel img { width: 100%; }
+/* detalhes ficam ATRÁS da foto (z-index 1 < 2): emolduram o trabalho, não o cobrem */
 .hero__lines {
-  position: absolute; z-index: 3; right: -4%; bottom: 0;
+  position: absolute; z-index: 1; right: -4%; bottom: 0;
   width: min(70%, 640px); pointer-events: none;
 }
 .hero__lines path { fill: none; stroke: var(--tinta); stroke-width: 1.5; stroke-linecap: round; }
 .hero__lines circle { fill: none; stroke: var(--tinta); stroke-width: 1.5; }
 @media (max-width: 767px) { .hero__lines { display: none; } }
 .hero__selo {
-  position: absolute; z-index: 3; left: 0; top: clamp(120px, 34vw, 200px);
+  position: absolute; z-index: 1; left: 0; top: clamp(120px, 34vw, 200px);
   writing-mode: vertical-rl;
   padding: .9em .45em;
   font: 400 .85rem/1 var(--f-manga); letter-spacing: .3em;
@@ -240,43 +243,60 @@ main > section { position: relative; padding-block: var(--respiro); }
 }
 
 /* ---------- 2. estilos ---------- */
+/* A foto é o trabalho: grande e na frente. A palavra gigante é cenário, fica atrás (z-index 1 < 2). */
 .estilos { overflow: clip; }
 .estilos__lista { list-style: none; padding: 0; }
 .estilo {
+  --palavra: 20vw;
   position: relative;
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center;
   padding-block: clamp(1.8rem, 5vw, 4rem);
   border-top: 1px solid var(--tinta-3);
 }
+.estilo:nth-child(2) { --palavra: 11vw; }   /* BLACKWORK tem 9 letras: cabe menor */
+.estilo:nth-child(3) { --palavra: 12.5vw; }
 .estilo:last-child { border-bottom: 1px solid var(--tinta-3); }
 .estilo__word {
   grid-column: 1 / -1; grid-row: 1; position: relative; z-index: 1;
-  font: 400 clamp(2.2rem, 9vw, 11rem)/.9 var(--f-manga);
+  font: 400 var(--palavra)/.9 var(--f-manga);
   white-space: nowrap; letter-spacing: -.02em;
 }
 /* o tipo mostra o estilo: anime com sombra mangá, blackwork chapado, fineline em fio */
 .estilo:nth-child(1) .estilo__word { text-shadow: .05em .05em 0 var(--hanko-2); }
 .estilo:nth-child(3) .estilo__word { color: transparent; -webkit-text-stroke: 1.25px var(--texto-claro); }
+.estilo__foto {
+  --cartao-borda: var(--papel); --cartao-sombra: transparent; --cartao-desloc: 0px; --cartao-bw: 3px;
+  grid-column: 1 / -1; grid-row: 2; justify-self: end;
+  position: relative; z-index: 2;
+  width: min(74vw, 420px);
+  margin: calc(var(--palavra) * -.32) 14px 0;   /* sobe sobre a base da palavra; folga p/ rotação e sombra */
+  border: var(--cartao-bw) solid var(--cartao-borda);
+  box-shadow: var(--cartao-desloc) var(--cartao-desloc) 0 var(--cartao-sombra);
+  background: var(--tinta-2);
+  rotate: 4deg;
+}
+.estilo__foto img { width: 100%; }
+.estilo:nth-child(1) .estilo__foto { --cartao-sombra: var(--hanko-2); --cartao-desloc: 12px; }
+.estilo:nth-child(2) .estilo__foto { --cartao-sombra: var(--papel); --cartao-desloc: 12px; justify-self: start; rotate: -5deg; }
+.estilo:nth-child(3) .estilo__foto { --cartao-bw: 2px; rotate: 3deg; }
 .estilo__frase {
-  grid-column: 1 / 8; grid-row: 2;
-  margin-top: 1rem; max-width: 38ch;
+  grid-column: 1 / -1; grid-row: 3; position: relative; z-index: 3;
+  margin-top: 1.4rem; max-width: 38ch;
   font: 400 clamp(1.25rem, 2vw, 1.6rem)/1.25 var(--f-serif);
   color: var(--texto-mudo);
 }
-.estilo__thumb {
-  grid-column: 9 / 13; grid-row: 1 / 3; justify-self: end; z-index: 0;
-  width: clamp(96px, 17vw, 230px);
-  border: 3px solid var(--papel);
-  rotate: 4deg;
-}
-.estilo:nth-child(2) .estilo__thumb { rotate: -5deg; justify-self: center; }
 
-/* no mobile a palavra ocupa a largura toda: miniatura sobreposta apagaria as letras */
-@media (max-width: 767px) {
-  .estilo__thumb { grid-row: 2; align-self: start; margin-top: 1rem; }
-}
 @media (min-width: 768px) {
-  .estilo__frase { grid-column: 2 / 7; }
+  .estilo { --palavra: 13vw; min-height: clamp(560px, 80vh, 840px); }
+  .estilo:nth-child(2) { --palavra: 8.5vw; }
+  .estilo:nth-child(3) { --palavra: 9vw; }
+  /* tudo na mesma linha do grid: palavra ao centro (atrás), foto num lado, frase embaixo no outro */
+  .estilo__word { grid-row: 1 / -1; }
+  .estilo:nth-child(2) .estilo__word { text-align: right; }
+  .estilo__foto { grid-column: 8 / -1; grid-row: 1 / -1; width: clamp(240px, 34vw, 480px); margin: 0 14px 0 0; }
+  .estilo:nth-child(2) .estilo__foto { grid-column: 1 / 6; margin: 0 0 0 clamp(8px, 2vw, 32px); }
+  .estilo__frase { grid-column: 1 / 7; grid-row: 1 / -1; align-self: end; margin: 0; }
+  .estilo:nth-child(2) .estilo__frase { grid-column: 8 / -1; }
 }
 
 /* ---------- 3. portfólio ---------- */
@@ -599,9 +619,6 @@ main > section { position: relative; padding-block: var(--respiro); }
 
 .estilo__word[data-dir="dir"] { --px-de: translateX(calc(-9vw * var(--amp))); --px-ate: translateX(calc(9vw * var(--amp))); }
 .estilo__word[data-dir="esq"] { --px-de: translateX(calc(9vw * var(--amp))); --px-ate: translateX(calc(-9vw * var(--amp))); }
-.estilo:nth-child(1) .estilo__thumb { --px-de: translateY(calc(80px * var(--amp))); --px-ate: translateY(calc(-80px * var(--amp))); }
-.estilo:nth-child(2) .estilo__thumb { --px-de: translateY(calc(40px * var(--amp))); --px-ate: translateY(calc(-130px * var(--amp))); }
-.estilo:nth-child(3) .estilo__thumb { --px-de: translateY(calc(130px * var(--amp))); --px-ate: translateY(calc(-40px * var(--amp))); }
 
 @media (min-width: 1024px) {
   .portfolio__col:nth-child(1) { --px-de: translateY(30px); --px-ate: translateY(-30px); }
@@ -618,6 +635,19 @@ main > section { position: relative; padding-block: var(--respiro); }
 @supports not (animation-timeline: view()) {
   .px { animation-play-state: paused; }
 }
+
+/* ---------- camada 3D (js/imersivo.min.js) ----------
+   Melhoria progressiva: sem a classe .gl tudo acima já funciona. A classe só entra depois que o
+   primeiro frame foi desenhado; aí o canvas assume e a foto do DOM some (continua lá para SEO e
+   leitor de tela). Z-order: fundo 0, palavras e detalhes 1, canvas com a foto 2, textos 3. */
+.cena__canvas {
+  position: absolute; inset: 0; z-index: 2;
+  width: 100%; height: 100%; pointer-events: none;
+  opacity: 0; transition: opacity .35s linear;
+}
+.gl > .cena__canvas { opacity: 1; }
+.gl [data-foto] { opacity: 0; transition: opacity .35s linear; }
+.gl .hero__tone { display: none; }   /* o screentone passa a ser desenhado no canvas */
 
 /* ---------- movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
