@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<title>Corte relâmpago</title>
+<defs>
+<pattern id="t" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="4" cy="4" r="1.5" fill="#15151b"/></pattern>
+</defs>
+<rect width="800" height="800" fill="#efe9dd"/>
+<!-- speed lines -->
+<g stroke="#15151b" stroke-linecap="round">
+<path d="M40,300 L170,170 M60,340 L150,250 M30,250 L90,190 M100,90 L170,20" stroke-width="3"/>
+<path d="M640,780 L760,660 M700,770 L780,690 M610,730 L680,660 M720,600 L790,530" stroke-width="3"/>
+<path d="M70,380 L120,330 M680,520 L740,460" stroke-width="1.5"/>
+</g>
+<circle cx="400" cy="400" r="330" fill="url(#t)"/>
+<!-- impact burst -->
+<path d="M400,80 L450,220 L590,120 L545,268 L712,246 L594,360 L730,446 L582,472 L664,614 L520,560 L502,724 L420,592 L326,712 L328,560 L168,646 L248,498 L80,452 L228,388 L112,246 L270,290 L236,128 L352,230 Z" fill="#15151b"/>
+<!-- slash arc -->
+<path d="M104,170 C380,170 620,380 676,700 C580,440 370,240 104,170 Z" fill="#efe9dd" stroke="#15151b" stroke-width="4" stroke-linejoin="round"/>
+<path d="M150,214 C360,240 540,400 610,640" fill="none" stroke="#efe9dd" stroke-width="3" stroke-dasharray="60 12 14 12"/>
+<!-- katana -->
+<g transform="translate(400,410) rotate(-42)">
+<path d="M-160,-13 L290,-13 C314,-13 336,-6 352,6 C320,10 300,12 280,12 L-160,12 Z" fill="#efe9dd" stroke="#15151b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M-150,4 q15,-7 30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0" fill="none" stroke="#15151b" stroke-width="2"/>
+<rect x="-178" y="-16" width="20" height="32" rx="2" fill="#15151b" stroke="#efe9dd" stroke-width="2"/>
+<ellipse cx="-188" cy="0" rx="10" ry="46" fill="#15151b" stroke="#efe9dd" stroke-width="3"/>
+<rect x="-372" y="-15" width="176" height="30" rx="6" fill="#15151b" stroke="#efe9dd" stroke-width="3"/>
+<path d="M-360,0 l10,-10 l10,10 l-10,10z M-326,0 l10,-10 l10,10 l-10,10z M-292,0 l10,-10 l10,10 l-10,10z M-258,0 l10,-10 l10,10 l-10,10z M-224,0 l8,-8 l8,8 l-8,8z" fill="#efe9dd"/>
+<path d="M-372,8 C-400,30 -396,60 -372,72" fill="none" stroke="#c4412f" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- lightning -->
+<g fill="#efe9dd" stroke="#15151b" stroke-width="3" stroke-linejoin="round">
+<path d="M262,26 L204,156 L244,150 L180,286 L282,126 L238,134 L300,26 Z"/>
+<path d="M704,300 L654,392 L684,390 L642,474 L728,362 L698,366 L740,300 Z"/>
+<path d="M470,430 L430,500 L456,498 L420,570 L486,480 L460,482 L494,430 Z"/>
+</g>
+<g fill="#15151b"><circle cx="700" cy="120" r="5"/><circle cx="90" cy="560" r="4"/><circle cx="720" cy="190" r="3"/></g>
+</svg>

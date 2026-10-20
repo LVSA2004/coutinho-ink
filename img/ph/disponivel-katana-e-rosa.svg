@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<title>Katana e rosa</title>
+<defs>
+<pattern id="t" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="4" cy="4" r="1.5" fill="#15151b"/></pattern>
+</defs>
+<rect width="800" height="1000" fill="#efe9dd"/>
+<rect x="30" y="30" width="740" height="940" fill="none" stroke="#15151b" stroke-width="3"/>
+<rect x="42" y="42" width="716" height="916" fill="none" stroke="#15151b" stroke-width="1.2"/>
+<!-- katana -->
+<g transform="translate(150,860) rotate(-53.3)">
+<path d="M236,-15 L836,-15 C860,-15 880,-8 896,4 C864,10 846,13 826,13 L236,13 Z" fill="#efe9dd" stroke="#15151b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M240,-11 L830,-11 L830,-3 L240,-3 Z" fill="url(#t)"/>
+<path d="M246,6 q15,-7 30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0" fill="none" stroke="#15151b" stroke-width="2"/>
+<rect x="214" y="-17" width="24" height="34" rx="2" fill="#15151b"/>
+<ellipse cx="206" cy="0" rx="9" ry="46" fill="#15151b"/>
+<ellipse cx="206" cy="0" rx="3" ry="34" fill="none" stroke="#efe9dd" stroke-width="2"/>
+<rect x="10" y="-16" width="188" height="32" rx="6" fill="#15151b"/>
+<path d="M24,0 l10,-11 l10,11 l-10,11z M58,0 l10,-11 l10,11 l-10,11z M92,0 l10,-11 l10,11 l-10,11z M126,0 l10,-11 l10,11 l-10,11z M160,0 l10,-11 l10,11 l-10,11z" fill="#efe9dd"/>
+<rect x="0" y="-18" width="16" height="36" rx="6" fill="#15151b"/>
+<path d="M120,16 C110,50 130,80 112,110 M136,16 C140,54 160,76 150,104" fill="none" stroke="#c4412f" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- leaves -->
+<path d="M306,596 C240,612 196,660 172,716 C240,708 284,664 306,596 Z M494,594 C560,596 612,630 640,684 C574,692 524,660 494,594 Z" fill="#15151b"/>
+<path d="M300,606 C260,640 220,680 184,708 M500,604 C550,630 590,656 628,680" stroke="#efe9dd" stroke-width="3" fill="none"/>
+<g transform="translate(400,500) scale(1.2) translate(-400,-500)">
+<path d="M290,470 C280,420 320,380 360,392 C372,366 428,366 440,392 C480,380 520,420 510,470 Z" fill="#efe9dd" stroke="#15151b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M360,392 C368,404 372,414 372,426 M440,392 C432,404 428,414 428,426" fill="none" stroke="#15151b" stroke-width="3" stroke-linecap="round"/>
+<path d="M318,462 C328,420 472,420 482,462 C472,490 328,490 318,462 Z" fill="#15151b"/>
+<path d="M366,462 C366,438 434,438 434,458 C434,476 386,478 386,460 C386,448 414,448 414,458" fill="none" stroke="#efe9dd" stroke-width="4" stroke-linecap="round"/>
+<path d="M290,470 C280,540 320,600 380,622 C350,580 340,530 352,478 C330,486 306,482 290,470 Z" fill="#efe9dd" stroke="#15151b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M510,470 C520,540 480,600 420,622 C450,580 460,530 448,478 C470,486 494,482 510,470 Z" fill="#efe9dd" stroke="#15151b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M296,486 C300,540 326,584 362,606 C340,570 334,530 340,486 Z M504,486 C500,540 474,584 438,606 C460,570 466,530 460,486 Z" fill="#15151b"/>
+<path d="M352,478 C340,540 360,600 400,632 C440,600 460,540 448,478 C430,500 370,500 352,478 Z" fill="#efe9dd" stroke="#15151b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M358,488 C380,508 420,508 442,488 C432,522 368,522 358,488 Z" fill="#15151b"/>
+<path d="M400,532 C396,566 398,594 404,620 M372,548 C380,578 388,598 398,616" fill="none" stroke="#15151b" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M380,628 L366,650 L392,640 L400,662 L408,640 L434,650 L420,628 Z" fill="#15151b"/>
+</g>
+<g fill="#15151b"><circle cx="560" cy="260" r="5"/><circle cx="578" cy="240" r="3"/><circle cx="220" cy="780" r="4"/></g>
+<g transform="translate(694,894) rotate(-4)"><rect width="46" height="46" rx="6" fill="#c4412f"/><path d="M12,14h22M23,9v28M14,24h18M12,34c8,2 16,2 22,-2" fill="none" stroke="#efe9dd" stroke-width="3.5" stroke-linecap="round"/></g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<title>Caveira blackwork</title>
+<rect width="800" height="800" fill="#efe9dd"/>
+<!-- disc + dot rings -->
+<circle cx="400" cy="400" r="318" fill="#15151b"/>
+<circle cx="400" cy="400" r="342" fill="none" stroke="#15151b" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 19"/>
+<circle cx="400" cy="400" r="360" fill="none" stroke="#15151b" stroke-width="2"/>
+<circle cx="400" cy="400" r="300" fill="none" stroke="#efe9dd" stroke-width="2" stroke-dasharray="3 9"/>
+<g transform="translate(0,-6)">
+<!-- cranium -->
+<path d="M400,140 C520,140 600,225 600,345 C600,405 580,445 555,470 C548,500 540,520 520,530 L280,530 C260,520 252,500 245,470 C220,445 200,405 200,345 C200,225 280,140 400,140 Z" fill="#efe9dd"/>
+<path d="M208,330 C212,400 236,440 262,468 C250,420 240,380 244,330 Z M592,330 C588,400 564,440 538,468 C550,420 560,380 556,330 Z" fill="#15151b"/>
+<path d="M400,140 l-10,38 l14,26 l-12,30 l8,18" fill="none" stroke="#15151b" stroke-width="4" stroke-linejoin="round"/>
+<path d="M300,200 C330,180 360,172 380,172 M262,260 C268,236 280,220 292,210" fill="none" stroke="#15151b" stroke-width="3" stroke-linecap="round"/>
+<!-- sockets -->
+<path d="M252,372 C258,322 332,312 366,344 C388,366 382,422 346,438 C300,454 248,424 252,372 Z M548,372 C542,322 468,312 434,344 C412,366 418,422 454,438 C500,454 552,424 548,372 Z" fill="#15151b"/>
+<path d="M266,320 C300,300 340,302 366,320 M534,320 C500,300 460,302 434,320" fill="none" stroke="#15151b" stroke-width="5" stroke-linecap="round"/>
+<path d="M400,430 C385,456 370,482 380,494 C392,490 396,484 400,478 C404,484 408,490 420,494 C430,482 415,456 400,430 Z" fill="#15151b"/>
+<path d="M300,462 C320,480 340,486 360,484 M500,462 C480,480 460,486 440,484" fill="none" stroke="#15151b" stroke-width="4" stroke-linecap="round"/>
+<!-- teeth -->
+<path d="M292,528 C292,560 300,574 310,580 L490,580 C500,574 508,560 508,528 Z" fill="#efe9dd" stroke="#15151b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M322,530 V578 M346,530 V580 M372,530 V580 M400,530 V580 M428,530 V580 M454,530 V580 M478,530 V578" stroke="#15151b" stroke-width="4"/>
+<path d="M290,566 C282,616 300,664 342,676 L458,676 C500,664 518,616 510,566 C500,580 490,586 480,588 L320,588 C310,586 300,580 290,566 Z" fill="#efe9dd" stroke="#15151b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M326,590 V626 M350,590 V630 M374,590 V632 M400,590 V632 M426,590 V632 M450,590 V630 M474,590 V626 M320,628 C370,640 430,640 480,628" fill="none" stroke="#15151b" stroke-width="4"/>
+<path d="M292,580 C290,620 304,656 334,672 C318,650 310,620 312,590 Z M508,580 C510,620 496,656 466,672 C482,650 490,620 488,590 Z" fill="#15151b"/>
+</g>
+</svg>

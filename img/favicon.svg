@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<title>Coutinho Ink</title>
+<rect x="2" y="2" width="60" height="60" rx="11" fill="#c4412f"/>
+<rect x="7" y="7" width="50" height="50" rx="7" fill="none" stroke="#efe9dd" stroke-width="2"/>
+<path d="M43.5,21.5 A15,15 0 1 0 43.5,42.5" fill="none" stroke="#efe9dd" stroke-width="8.5" stroke-linecap="square"/>
+</svg>

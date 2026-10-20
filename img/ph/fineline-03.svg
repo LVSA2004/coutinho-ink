@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<title>Ramo botânico</title>
+<defs>
+<g id="fl">
+<ellipse cy="-40" rx="13" ry="32"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(45)"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(90)"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(135)"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(180)"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(225)"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(270)"/><ellipse cy="-40" rx="13" ry="32" transform="rotate(315)"/>
+<circle r="11" fill="#efe9dd"/><circle r="5"/>
+<path d="M0,-14 v-20 M0,14 v20 M-14,0 h-20 M14,0 h20" stroke-width="1.2"/>
+</g>
+<g id="lf"><path d="M0,0 C30,-26 70,-28 104,-14 C76,8 36,14 0,0 Z"/><path d="M0,0 C34,-8 70,-12 104,-14" stroke-width="1.5"/></g>
+</defs>
+<rect width="800" height="800" fill="#efe9dd"/>
+<g fill="none" stroke="#15151b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M400,730 C388,620 420,500 400,380 C386,290 410,210 440,150"/>
+<path d="M404,480 C448,444 500,410 534,336"/>
+<path d="M398,566 C352,530 304,510 274,450"/>
+<use href="#lf" transform="translate(402,640) rotate(-20)"/>
+<use href="#lf" transform="translate(396,600) rotate(200) scale(1,-1)"/>
+<use href="#lf" transform="translate(412,420) rotate(-35) scale(0.8)"/>
+<use href="#lf" transform="translate(402,340) rotate(205) scale(0.8,-0.8)"/>
+<use href="#lf" transform="translate(470,428) rotate(-70) scale(0.6)"/>
+<use href="#lf" transform="translate(330,532) rotate(240) scale(0.6,-0.6)"/>
+<use href="#fl" transform="translate(440,150)"/>
+<use href="#fl" transform="translate(534,336) rotate(20) scale(0.72)"/>
+<!-- bud -->
+<path d="M274,450 C254,430 252,398 272,376 C294,398 292,430 274,450 Z"/>
+<path d="M274,450 C262,440 254,428 252,414 M274,450 C286,440 294,428 296,414 M272,384 V440" stroke-width="1.5"/>
+</g>
+<g fill="#15151b"><circle cx="520" cy="180" r="2.5"/><circle cx="546" cy="214" r="2"/><circle cx="300" cy="300" r="2.5"/><circle cx="330" cy="250" r="2"/><circle cx="600" cy="470" r="2"/><circle cx="230" cy="560" r="2"/></g>
+</svg>

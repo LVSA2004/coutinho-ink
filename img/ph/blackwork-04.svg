@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<title>Mariposa</title>
+<defs>
+<g id="w">
+<path d="M394,420 C330,330 220,250 120,262 C88,266 84,302 110,332 C150,380 200,440 240,470 C300,492 360,482 394,470 Z" fill="#15151b"/>
+<path d="M394,482 C340,500 262,522 202,582 C160,632 180,702 242,712 C302,720 362,640 394,540 Z" fill="#15151b"/>
+<g fill="none" stroke="#efe9dd" stroke-linecap="round">
+<path d="M388,436 C320,378 240,322 142,288 M388,450 C320,420 262,402 180,394 M388,462 C340,462 292,462 244,456" stroke-width="3"/>
+<path d="M388,500 C330,540 270,600 236,660 M388,520 C350,580 310,640 280,690" stroke-width="3"/>
+<path d="M126,282 C150,330 190,380 236,420" stroke-width="2" stroke-dasharray="3 7"/>
+</g>
+<circle cx="214" cy="336" r="34" fill="#efe9dd"/>
+<circle cx="214" cy="336" r="22" fill="#15151b"/>
+<circle cx="208" cy="330" r="7" fill="#efe9dd"/>
+<path d="M240,636 C262,612 296,612 314,636 C292,626 264,626 240,636 Z" fill="#efe9dd"/>
+<g fill="#efe9dd"><circle cx="118" cy="300" r="4"/><circle cx="134" cy="338" r="4"/><circle cx="160" cy="372" r="4"/><circle cx="190" cy="408" r="4"/><circle cx="196" cy="610" r="4"/><circle cx="196" cy="648" r="4"/><circle cx="214" cy="686" r="4"/><circle cx="246" cy="698" r="4"/></g>
+<path d="M394,386 C372,330 344,296 298,282" fill="none" stroke="#15151b" stroke-width="3" stroke-linecap="round"/>
+<path d="M370,334 l-14,-2 M356,316 l-14,-4 M340,302 l-14,-6 M322,292 l-12,-8 M378,350 l-12,0" stroke="#15151b" stroke-width="2" stroke-linecap="round"/>
+</g>
+</defs>
+<rect width="800" height="1000" fill="#efe9dd"/>
+<!-- moon + halo -->
+<path d="M376,96 C320,110 300,180 336,224 C372,268 440,262 466,214 C430,240 380,226 362,186 C346,150 352,116 376,96 Z" fill="#15151b"/>
+<circle cx="400" cy="490" r="330" fill="none" stroke="#15151b" stroke-width="2"/>
+<circle cx="400" cy="490" r="344" fill="none" stroke="#15151b" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 18"/>
+<use href="#w"/>
+<use href="#w" transform="matrix(-1 0 0 1 800 0)"/>
+<!-- body -->
+<ellipse cx="400" cy="440" rx="22" ry="42" fill="#15151b" stroke="#efe9dd" stroke-width="3"/>
+<path d="M400,480 C426,482 432,560 400,646 C368,560 374,482 400,480 Z" fill="#15151b" stroke="#efe9dd" stroke-width="3"/>
+<path d="M386,512 C396,518 404,518 414,512 M384,540 C396,546 404,546 416,540 M388,568 C396,574 404,574 412,568 M392,596 C397,600 403,600 408,596" fill="none" stroke="#efe9dd" stroke-width="2.5"/>
+<circle cx="400" cy="394" r="16" fill="#15151b"/>
+<path d="M392,428 a8,8 0 1 1 16,0 v8 h-16 Z" fill="#efe9dd"/>
+<circle cx="396" cy="428" r="2" fill="#15151b"/><circle cx="404" cy="428" r="2" fill="#15151b"/>
+<!-- dot chain -->
+<g fill="#15151b"><circle cx="400" cy="680" r="7"/><circle cx="400" cy="708" r="5"/><circle cx="400" cy="730" r="3.5"/><path d="M400,760 L414,784 L400,808 L386,784 Z"/><circle cx="400" cy="840" r="4"/></g>
+</svg>

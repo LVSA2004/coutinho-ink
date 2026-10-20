@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+<title>Adaga ornamental</title>
+<defs>
+<g id="scroll">
+<path d="M368,560 C300,556 252,600 262,654 C270,698 330,700 334,662 C337,632 302,628 298,652" fill="none" stroke="#15151b" stroke-width="9" stroke-linecap="round"/>
+<path d="M300,700 C254,724 240,776 262,814 C284,780 298,744 300,700 Z" fill="#15151b"/>
+<path d="M364,700 C310,740 300,820 330,880 C346,820 360,770 364,700 Z" fill="#15151b"/>
+<path d="M330,900 C318,940 330,980 358,1000 C362,960 352,926 330,900 Z" fill="#15151b"/>
+<circle cx="252" cy="860" r="7" fill="#15151b"/><circle cx="244" cy="892" r="5" fill="#15151b"/><circle cx="240" cy="918" r="3.5" fill="#15151b"/>
+<path d="M352,470 C300,470 250,440 228,400 C270,420 310,430 352,430 Z" fill="#15151b"/>
+</g>
+</defs>
+<rect width="800" height="1200" fill="#efe9dd"/>
+<!-- sunburst -->
+<circle cx="400" cy="400" r="150" fill="none" stroke="#15151b" stroke-width="100" stroke-dasharray="10 10"/>
+<circle cx="400" cy="400" r="212" fill="none" stroke="#15151b" stroke-width="3"/>
+<circle cx="400" cy="400" r="228" fill="none" stroke="#15151b" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 17"/>
+<circle cx="400" cy="400" r="96" fill="#efe9dd" stroke="#15151b" stroke-width="3"/>
+<use href="#scroll"/>
+<use href="#scroll" transform="matrix(-1 0 0 1 800 0)"/>
+<!-- blade -->
+<path d="M358,424 L358,900 L400,1082 L442,900 L442,424 Z" fill="#efe9dd" stroke="#15151b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M400,428 L400,1070 L362,902 L362,428 Z" fill="#15151b"/>
+<path d="M418,450 V880" stroke="#15151b" stroke-width="3"/>
+<!-- guard -->
+<path d="M236,404 C232,370 276,362 296,384 L504,384 C524,362 568,370 564,404 C560,436 520,444 504,422 L296,422 C280,444 240,436 236,404 Z" fill="#15151b"/>
+<circle cx="262" cy="404" r="10" fill="#efe9dd"/><circle cx="538" cy="404" r="10" fill="#efe9dd"/>
+<path d="M300,394 H500 M300,412 H500" stroke="#efe9dd" stroke-width="2"/>
+<path d="M400,378 L422,403 L400,428 L378,403 Z" fill="#c4412f" stroke="#efe9dd" stroke-width="3"/>
+<!-- grip -->
+<rect x="374" y="178" width="52" height="206" rx="6" fill="#15151b"/>
+<path d="M378,200 L422,186 M378,226 L422,212 M378,252 L422,238 M378,278 L422,264 M378,304 L422,290 M378,330 L422,316 M378,356 L422,342 M378,380 L422,368" stroke="#efe9dd" stroke-width="3"/>
+<path d="M364,170 H436 L428,184 H372 Z" fill="#15151b"/>
+<circle cx="400" cy="140" r="34" fill="#15151b"/>
+<circle cx="400" cy="140" r="20" fill="none" stroke="#efe9dd" stroke-width="3"/>
+<circle cx="400" cy="140" r="6" fill="#efe9dd"/>
+<path d="M400,106 L410,76 L400,58 L390,76 Z" fill="#15151b"/>
+<!-- drop -->
+<path d="M400,1104 C412,1124 416,1138 400,1146 C384,1138 388,1124 400,1104 Z" fill="#c4412f"/>
+</svg>

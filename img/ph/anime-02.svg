@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<title>Máscara kitsune</title>
+<defs>
+<pattern id="t" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="4.5" cy="4.5" r="1.4" fill="#15151b"/></pattern>
+<pattern id="t2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.7" fill="#15151b"/></pattern>
+<clipPath id="m"><path id="mask" d="M400,660 C355,660 296,618 266,552 C238,490 228,428 244,372 L214,160 L334,296 C364,286 436,286 466,296 L586,160 L556,372 C572,428 562,490 534,552 C504,618 445,660 400,660 Z"/></clipPath>
+</defs>
+<rect width="800" height="800" fill="#efe9dd"/>
+<!-- tone moon -->
+<circle cx="400" cy="410" r="300" fill="url(#t)"/>
+<circle cx="400" cy="410" r="300" fill="none" stroke="#15151b" stroke-width="3"/>
+<circle cx="400" cy="410" r="316" fill="none" stroke="#15151b" stroke-width="1.5" stroke-dasharray="6 8"/>
+<!-- cords -->
+<g fill="none" stroke="#15151b" stroke-width="5" stroke-linecap="round">
+<path d="M246,380 C196,420 180,520 204,610"/>
+<path d="M554,380 C604,420 620,520 596,610"/>
+</g>
+<g fill="#15151b">
+<path d="M190,606 h28 l6,16 h-40 Z M186,624 h40 l-4,70 h-32 Z"/>
+<path d="M582,606 h28 l6,16 h-40 Z M578,624 h40 l-4,70 h-32 Z"/>
+</g>
+<path d="M194,640 v50 M204,640 v50 M214,640 v50 M586,640 v50 M596,640 v50 M606,640 v50" stroke="#efe9dd" stroke-width="2"/>
+<!-- mask -->
+<use href="#mask" fill="#efe9dd" stroke="#efe9dd" stroke-width="22" stroke-linejoin="round"/>
+<g clip-path="url(#m)">
+<path d="M266,552 C296,618 355,660 400,660 L400,612 C352,604 310,572 292,510 C280,470 270,430 262,390 L240,400 Z" fill="url(#t2)"/>
+</g>
+<use href="#mask" fill="none" stroke="#15151b" stroke-width="8" stroke-linejoin="round"/>
+<path d="M238,212 L318,302 L268,344 Z M562,212 L482,302 L532,344 Z" fill="#15151b"/>
+<path d="M254,254 L292,300 M546,254 L508,300" stroke="#efe9dd" stroke-width="3" stroke-linecap="round"/>
+<!-- eyes -->
+<path d="M286,424 C318,396 360,400 378,428 C346,436 314,436 286,424 Z M514,424 C482,396 440,400 422,428 C454,436 486,436 514,424 Z" fill="#15151b"/>
+<path d="M280,436 C310,452 350,452 374,440 M520,436 C490,452 450,452 426,440" fill="none" stroke="#15151b" stroke-width="2.5" stroke-linecap="round"/>
+<!-- red markings -->
+<g fill="#c4412f">
+<path d="M296,384 C312,352 346,346 372,366 C346,368 322,374 296,384 Z"/>
+<path d="M504,384 C488,352 454,346 428,366 C454,368 478,374 504,384 Z"/>
+<path d="M400,312 C412,328 414,346 400,358 C386,346 388,328 400,312 Z"/>
+</g>
+<!-- snout -->
+<path d="M384,600 C392,592 408,592 416,600 C412,612 388,612 384,600 Z" fill="#15151b"/>
+<path d="M400,612 V628 M372,632 C386,642 414,642 428,632" fill="none" stroke="#15151b" stroke-width="3.5" stroke-linecap="round"/>
+<g fill="none" stroke="#15151b" stroke-width="3" stroke-linecap="round">
+<path d="M348,566 C318,560 292,566 270,584 M352,582 C324,584 304,594 288,612"/>
+<path d="M452,566 C482,560 508,566 530,584 M448,582 C476,584 496,594 512,612"/>
+<path d="M300,486 c14,-6 28,-4 38,6 M500,486 c-14,-6 -28,-4 -38,6"/>
+</g>
+</svg>
