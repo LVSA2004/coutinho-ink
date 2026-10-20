@@ -19,7 +19,7 @@ relacionado: [[index-html]], [[css-styles]], [[imersivo]], [[2026-10-20-camada-3
 - **Moldura sem branco:** borda de 2 px cinza claro; sombra do blackwork em `--tinta-3` (antes `--papel`); anime mantém a sombra hanko.
 - **Textura em pixels reais:** uma `Image` própria (mesma URL, em cache) em vez do `<img>` com `srcset`. `canvas.dataset.textura` expõe a resolução para os testes.
 - **Screentone desvia das letras:** uniforme `uT` com o retângulo da palavra e borda suave.
-- **Palavras:** tamanhos para caber ao lado da foto (ANIME 12vw, BLACKWORK 6,8vw, FINELINE 7,5vw), parallax horizontal de ±2vw, FINELINE com contorno de 2 px, frase maior e mais clara. No mobile a foto desce `+0,2em` (positivo) para o canto girado só encostar na palavra.
+- **Palavras:** tamanhos para caber ao lado da foto, com teto em px porque o contêiner para em 1320 px (ANIME min(12vw, 173px), BLACKWORK min(6,8vw, 98px), FINELINE min(7,5vw, 108px); sem o teto, em 1920 px o BLACKWORK virava "ACKWORK"), parallax horizontal de ±2vw, FINELINE com contorno de 2 px, frase maior e mais clara. No mobile a foto desce `+0,2em` (positivo) para o canto girado só encostar na palavra.
 
 **Como medir legibilidade (ver [[07-Testes]]):** renderizar o fallback CSS com a foto escondida e depois visível e contar quantos pixels das letras mudaram. Medir pela caixa da fonte ou pelo envelope do retângulo girado errou: dava 5% quando o olho via ~20%.
 
