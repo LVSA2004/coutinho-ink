@@ -25,10 +25,12 @@ Landing page estática (HTML, CSS e JS puro) do estúdio de tatuagem Coutinho In
 ## Decisões
 - [[2026-10-20-fotos-reais-e-disponiveis-oculta]]
 - [[2026-10-20-camada-3d-three]]
+- [[2026-10-20-recortes-e-leitura-em-estilos]]
 
 ## Log de sessões
 - [[2026-10-20]]
 - [[2026-10-20-camada-3d]]
+- [[2026-10-20-estilos-fix]]
 
 ## Fora do vault
 `PRODUCT.md` (público e tom) e `DESIGN.md` (tokens, componentes, proibições) na raiz do projeto.

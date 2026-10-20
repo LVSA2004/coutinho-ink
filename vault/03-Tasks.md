@@ -16,7 +16,10 @@ relacionado: [[00-Index]]
 - [ ] Ligar `robots.txt` e `sitemap.xml` ao git (hoje fora do repositório, então não vão ao ar) depois de definir o domínio #sonnet [[index-html]]
 - [ ] Medir LCP e peso real em 4G (Lighthouse) com o 3D ativo #haiku [[imersivo]]
 
+- [ ] Pedir ao Coutinho os originais em maior resolução e refazer os recortes de Estilos #haiku [[2026-10-20-recortes-e-leitura-em-estilos]]
+
 ## Concluídas
+- [x] 2026-10-20: recortes de Estilos, moldura sem branco, textura em pixels reais, palavras legíveis #sonnet [[2026-10-20-recortes-e-leitura-em-estilos]]
 - [x] 2026-10-20: detalhes do hero atrás da foto; fotos de Estilos grandes na frente das palavras #sonnet [[css-styles]] [[index-html]]
 - [x] 2026-10-20: camada 3D com three.js (hero e Estilos) #sonnet [[imersivo]]
 - [x] 2026-10-20: `vercel.json` tirando vault, docs, tools e .md do ar #sonnet [[2026-10-20-camada-3d-three]]

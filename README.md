@@ -40,6 +40,20 @@ O portfólio, o hero e as miniaturas de Estilos já usam fotos reais (21 no port
    Ele cria em `img/` as versões leves de cada foto (AVIF, WebP e JPG em até 3 tamanhos) e imprime um bloco `<picture>` para cada uma.
 3. No `index.html`, copie um `<a class="obra">` existente em `.portfolio__grade`, troque o bloco `<picture>` pelo novo e ajuste `data-estilo` e o `href` (o JPG maior, que abre ampliado) com os valores que o script mostra no comentário. Troque `alt="TROCAR: descreva a tatuagem"` por uma descrição de verdade (ex.: "Tatuagem fineline de lua crescente no antebraço").
 
+## Fotos da seção Estilos (recortes)
+
+As três fotos grandes de Estilos não são as do portfólio: são **recortes apertados em volta da tatuagem** (`img/estilo-anime-*`, `estilo-blackwork-*`, `estilo-fineline-*`). Sem o recorte, a foto do blackwork tinha 33% de papel-toalha branco; com ele, cerca de 11%. As fotos inteiras seguem no portfólio e no lightbox.
+
+Receita (origem em `fotos/`, caixa em pixels do original `left, top, largura, altura`):
+
+| Saída | Original | Caixa |
+|---|---|---|
+| `estilo-anime` | `anime-02.jpeg` | 250, 200, 720, 900 |
+| `estilo-blackwork` | `blackwork-01.jpeg` | 140, 30, 740, 1130 |
+| `estilo-fineline` | `fineline-01.jpeg` | 425, 400, 560, 712 |
+
+Para trocar a foto de um estilo: escolha o original, recorte com `sharp(...).extract({ left, top, width, height }).jpeg({ quality: 95 })`, salve em `fotos/estilo-<nome>.jpeg` e rode `node otimizar-fotos.mjs` (na pasta `tools/`; para não refazer as outras, aponte `FOTOS_DIR` para uma pasta só com os recortes). Depois ajuste `width`, `height` e os nomes no `<figure class="estilo__foto">` do `index.html`. Meta: proporção entre 0,65 e 0,85, tatuagem ocupando a maior parte do quadro e pouco fundo branco.
+
 ## Desenhos disponíveis (seção oculta)
 
 A seção `#disponiveis` está com o atributo `hidden` e fora do menu até existirem desenhos reais para vender. Para reativar: gere as fotos `disponivel-<nome>`, coloque um `<article class="painel rv">` por desenho dentro de `.disp__paineis` (o modelo está no comentário do `index.html`), tire o `hidden` da `<section>` e devolva `<a href="#disponiveis">Disponíveis</a>` ao `<nav>` do topo.

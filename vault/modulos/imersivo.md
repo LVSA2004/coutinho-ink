@@ -16,7 +16,8 @@ relacionado: [[index-html]], [[css-styles]], [[js-main]], [[2026-10-20-camada-3d
 **Movimento:** câmera em perspectiva com 1 unidade = 1 px no plano z=0. O ponteiro (só mouse) e o progresso de scroll da cena deslocam a câmera e inclinam o cartão. O render só roda com a cena visível e só quando algo mudou.
 
 **Armadilhas**
-- Textura: nunca `new Texture(img)` com o `<img>` do DOM (ver [[2026-10-20-camada-3d-three]], item 4).
+- Textura: nunca `new Texture(img)` com o `<img>` do DOM (ver [[2026-10-20-camada-3d-three]], item 4). Tampouco desenhar o `<img>` com `srcset` no canvas: `naturalWidth` vem corrigido pela densidade. Usa-se uma `Image` própria da mesma URL (`currentSrc`), e `canvas.dataset.textura` guarda `LxA` real ([[2026-10-20-recortes-e-leitura-em-estilos]]).
+- Screentone sobre texto: o canvas fica acima das palavras; o uniforme `uT` (retângulo da palavra, só em Estilos) zera os pontos ali.
 - Ordem de desenho por `renderOrder` com tudo `transparent` e sem `depthTest`.
 - `fwidth` e `#include <colorspace_fragment>` exigem WebGL2 (o three atual já exige).
 - `webglcontextlost` desmonta a cena e devolve o fallback CSS.
