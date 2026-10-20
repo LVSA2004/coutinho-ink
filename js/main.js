@@ -9,6 +9,16 @@
   const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const temIO = 'IntersectionObserver' in window;
 
+  // Camada 3D (three.js, ~1 arquivo): só depois da página pronta, sem movimento reduzido nem economia de dados.
+  // Se falhar, o layout em CSS já está completo. Fonte e rebuild: js/src/imersivo.js + README.
+  if (!reduz && !navigator.connection?.saveData) {
+    const carregar = () => import('./imersivo.min.js').catch(() => {});
+    addEventListener('load', () => {
+      if (window.requestIdleCallback) requestIdleCallback(carregar, { timeout: 2000 });
+      else setTimeout(carregar, 300);
+    }, { once: true });
+  }
+
   // Reveal first: CSS hides .js .rv until .is-in, so nothing below may block it.
   const rvs = $$('.rv');
   const mostrar = el => el.classList.add('is-in');

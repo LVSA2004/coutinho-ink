@@ -617,8 +617,9 @@ main > section { position: relative; padding-block: var(--respiro); }
 .hero__panel { --px-de: scale(1); --px-ate: translateY(calc(-6vh * var(--amp))) scale(1.06); }
 .hero__lines { --px-de: translateY(0); --px-ate: translateY(calc(-34vh * var(--amp))); }
 
-.estilo__word[data-dir="dir"] { --px-de: translateX(calc(-9vw * var(--amp))); --px-ate: translateX(calc(9vw * var(--amp))); }
-.estilo__word[data-dir="esq"] { --px-de: translateX(calc(9vw * var(--amp))); --px-ate: translateX(calc(-9vw * var(--amp))); }
+/* amplitude moderada: a palavra desliza atrás da foto sem perder as letras do começo */
+.estilo__word[data-dir="dir"] { --px-de: translateX(calc(-4vw * var(--amp))); --px-ate: translateX(calc(4vw * var(--amp))); }
+.estilo__word[data-dir="esq"] { --px-de: translateX(calc(4vw * var(--amp))); --px-ate: translateX(calc(-4vw * var(--amp))); }
 
 @media (min-width: 1024px) {
   .portfolio__col:nth-child(1) { --px-de: translateY(30px); --px-ate: translateY(-30px); }
